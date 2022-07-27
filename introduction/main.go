@@ -5,6 +5,8 @@ import (
 	"strings"
 )
 
+var dummy = "global variable"
+
 func main() {
 	// var conferenceName string = "Go Conference"
 	// OR
@@ -13,9 +15,13 @@ func main() {
 	var remainingTickets int = 50
 	var bookingsSlice []string
 
+	fmt.Println(dummy)
+
 	fmt.Printf("Welcome to %v boking application\n", conferenceName)
 	fmt.Println("We have total of", conferanceTickets, "tickets and", remainingTickets, "are still avalible")
-	fmt.Println("Get your tickets here to attend")
+	// fmt.Println("Get your tickets here to attend")
+	print("Get your tickets here to attend")
+
 	//To print variable types
 	fmt.Printf("conferenceTickets is %T, remainingTickets is %T, conferenceName is %T.\n", conferanceTickets, remainingTickets, conferenceName)
 
@@ -84,4 +90,9 @@ func main() {
 		}
 	}
 
+}
+
+func print(str string) {
+	fmt.Println(str)
+	fmt.Println(dummy)
 }
