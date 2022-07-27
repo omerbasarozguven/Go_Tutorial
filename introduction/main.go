@@ -1,6 +1,7 @@
 package main
 
 import (
+	"booking-app/helper"
 	"fmt"
 	"strings"
 )
@@ -16,11 +17,12 @@ func main() {
 	var bookingsSlice []string
 
 	fmt.Println(dummy)
+	fmt.Println(helper.HelperVar)
 
 	fmt.Printf("Welcome to %v boking application\n", conferenceName)
 	fmt.Println("We have total of", conferanceTickets, "tickets and", remainingTickets, "are still avalible")
 	// fmt.Println("Get your tickets here to attend")
-	print("Get your tickets here to attend")
+	helper.PrintFnc("Get your tickets here to attend")
 
 	//To print variable types
 	fmt.Printf("conferenceTickets is %T, remainingTickets is %T, conferenceName is %T.\n", conferanceTickets, remainingTickets, conferenceName)
@@ -90,9 +92,4 @@ func main() {
 		}
 	}
 
-}
-
-func print(str string) {
-	fmt.Println(str)
-	fmt.Println(dummy)
 }
