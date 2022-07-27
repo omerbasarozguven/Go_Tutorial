@@ -101,4 +101,21 @@ func main() {
 	var mapSlice = make([]map[string]string, 0)
 	mapSlice = append(mapSlice, firstMap)
 	fmt.Println(mapSlice)
+
+	// Struct
+	type UserData struct {
+		firstName  string
+		lastName   string
+		email      string
+		nOfTickets int
+	}
+	var userDataSlice []UserData
+	var user = UserData{
+		firstName:  "omer",
+		lastName:   "ozguven",
+		email:      "omer@gmail.com",
+		nOfTickets: 5,
+	}
+	userDataSlice = append(userDataSlice, user)
+	fmt.Println(userDataSlice)
 }
