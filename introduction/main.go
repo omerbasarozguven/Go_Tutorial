@@ -4,9 +4,13 @@ import (
 	"booking-app/helper"
 	"fmt"
 	"strings"
+	"sync"
+	"time"
 )
 
 var dummy = "global variable"
+
+var wg = sync.WaitGroup{}
 
 func main() {
 	// var conferenceName string = "Go Conference"
@@ -92,6 +96,10 @@ func main() {
 		}
 	}
 
+	//concurrency
+	wg.Add(1)
+	go sleepFnc()
+
 	// MAPS
 	var firstMap = make(map[string]string)
 	firstMap["firstName"] = "omer"
@@ -118,4 +126,13 @@ func main() {
 	}
 	userDataSlice = append(userDataSlice, user)
 	fmt.Println(userDataSlice)
+
+	wg.Wait()
+}
+
+// concurrency
+func sleepFnc() {
+	time.Sleep(10 * time.Second)
+	fmt.Println("finished")
+	wg.Done()
 }
