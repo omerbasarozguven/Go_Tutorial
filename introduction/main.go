@@ -92,4 +92,13 @@ func main() {
 		}
 	}
 
+	// MAPS
+	var firstMap = make(map[string]string)
+	firstMap["firstName"] = "omer"
+	firstMap["lastName"] = "ozguven"
+	firstMap["email"] = "omer@gmail.com"
+	fmt.Println(firstMap)
+	var mapSlice = make([]map[string]string, 0)
+	mapSlice = append(mapSlice, firstMap)
+	fmt.Println(mapSlice)
 }
